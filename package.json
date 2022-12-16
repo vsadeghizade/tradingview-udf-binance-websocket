@@ -1,0 +1,42 @@
+{
+  "name": "tradingview-udf-binance-websocket",
+  "version": "1.0.0",
+  "description": "This is a sample project that is implemented to provide TradingView Charting Library UDF data from Binance exchange",
+  "main": "./bin/www",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./bin/www"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vsadeghizade/tradingview-udf-binance-websocket.git"
+  },
+  "author": "Vahid Sadeghizadeh <v.sadeghizade@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vsadeghizade/tradingview-udf-binance-websocket/issues"
+  },
+  "homepage": "https://github.com/vsadeghizade/tradingview-udf-binance-websocket#readme",
+  "keywords": [
+    "binance",
+    "tradingview",
+    "crypto",
+    "exchange",
+    "websocket",
+    "ohlcv",
+    "udf",
+    "api",
+    "node.js",
+    "express.js",
+    "Redis"
+  ],
+  "dependencies": {
+    "axios": "^1.2.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-validator": "^6.14.2",
+    "ioredis": "^5.2.4",
+    "morgan": "^1.9.1",
+    "node-binance-api-modified-futures": "^0.1.11"
+  }
+}

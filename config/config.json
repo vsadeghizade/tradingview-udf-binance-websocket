@@ -1,0 +1,74 @@
+{
+  "development": {
+    "username": "root",
+    "password": null,
+    "database": "HQ_Game",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "logging": true,
+    "pool": {
+      "maxConnections": 15,
+      "minConnections": 5,
+      "maxIdleTime": 10000
+    },
+    "redis": {
+      "host": "127.0.0.1",
+      "port": 6379
+    },
+    "define": {
+      "charset": "utf8",
+      "dialectOptions": {
+        "collate": "utf8_unicode_ci"
+      },
+      "freezeTableName": true
+    }
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "HQ_Game",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "logging": true,
+    "pool": {
+      "maxConnections": 15,
+      "minConnections": 5,
+      "maxIdleTime": 10000
+    },
+    "redis": {
+      "host": "127.0.0.1",
+      "port": 6379
+    },
+    "define": {
+      "charset": "utf8",
+      "dialectOptions": {
+        "collate": "utf8_unicode_ci"
+      },
+      "freezeTableName": true
+    }
+  },
+  "production": {
+    "username": "root",
+    "password": null,
+    "database": "HQ_Game",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "logging": false,
+    "pool": {
+      "maxConnections": 15,
+      "minConnections": 5,
+      "maxIdleTime": 10000
+    },
+    "redis": {
+      "host": "127.0.0.1",
+      "port": 6379
+    },
+    "define": {
+      "charset": "utf8",
+      "dialectOptions": {
+        "collate": "utf8_unicode_ci"
+      },
+      "freezeTableName": true
+    }
+  }
+}

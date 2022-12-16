@@ -1,0 +1,8 @@
+{
+    "name": "tradingview-udf-binance-websocket API documentation",
+    "version": "1.0.0",
+    "description": "This is a sample project that is implemented to provide TradingView Charting Library UDF data from Binance exchange",
+    "template": {
+        "forceLanguage": "en"
+    }
+}

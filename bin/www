@@ -1,0 +1,86 @@
+#!/usr/bin/env node
+var app = require('../app')
+const {logError} = require('../utils/errorHandler')
+
+var http = require('http')
+const server = http.createServer(app)
+
+const marketType = process.env.MARKET_TYPE || 'futures'
+
+// You must set APIKEY and APISECRET from your Binance account.
+const binance = require('node-binance-api-modified-futures')().options({
+    APIKEY: '',
+    APISECRET: '',
+})
+
+
+/**
+ * These params are optional that sets which one of Symbols or all Symbol from "app.udf.allSymbols".
+ * Please pay attention that some Symbols for Futures market are different from Spot market.
+ */
+var symbolArrayFutures = ["BTCUSDT", "ETHUSDT"]
+var symbolArraySpot = ["BTCUSDT", "ETHUSDT"]
+
+// This is optional that means you can set specific resolutions of all resolutions from "app.udf.resolutions".
+var resolutions = [15, 30, 60, 120, 240]
+
+if (marketType === "futures") {
+    app.udf.getWebSocketSymbolFuturesData(binance, symbolArrayFutures, resolutions)
+} else {
+    app.udf.getWebSocketSymbolSpotData(binance, symbolArraySpot, resolutions)
+}
+
+// Get port from environment and store in Express.
+var port = normalizePort(process.env.PORT || '3000')
+app.set('port', port)
+
+// Listen on provided port, on all network interfaces.
+server.listen(port)
+
+// if the Promise is rejected this will catch it
+process.on('unhandledRejection', error => {
+    throw error
+})
+
+process.on('uncaughtException', error => {
+    if (error.syscall !== 'listen') {
+        logError(error)
+    }
+
+    var bind = typeof port === 'string'
+        ? 'Pipe ' + port
+        : 'Port ' + port
+
+    // handle specific listen errors with friendly messages
+    switch (error.code) {
+        case 'EACCES':
+            logError(bind + ' requires elevated privileges')
+            process.exit(1)
+            break
+        case 'EADDRINUSE':
+            logError(bind + ' requires elevated privileges')
+            process.exit(1)
+            break
+        default:
+            logError(error)
+    }
+})
+
+/**
+ * Normalize a port into a number, string, or false.
+ */
+function normalizePort(val) {
+    var port = parseInt(val, 10)
+
+    if (isNaN(port)) {
+        // named pipe
+        return val
+    }
+
+    if (port >= 0) {
+        // port number
+        return port
+    }
+
+    return false
+}
