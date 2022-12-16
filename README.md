@@ -45,7 +45,7 @@ In browser open:
 ## Test with Chart Library
 
 Take library from TradingView repo.
-Open index.html and find new TradingView.widget({}) and setup config:
+Open `index.html` and find `new TradingView.widget({})` and setup config:
 
 Set `symbol` to `BTCUSDT`
 Set `datafeed` to `new Datafeeds.UDFCompatibleDatafeed('http://localhost:3000')`
