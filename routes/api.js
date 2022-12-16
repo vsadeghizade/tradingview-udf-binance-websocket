@@ -8,7 +8,7 @@ const {check} = require('express-validator')
  * @apiGroup Api
  */
 router.all('/', (req, res, next) => {
-    res.set('Content-Type', 'text/plain').send('Welcome to the Binance UDF Adapter for TradingView. See ./config for more details.')
+    res.set('Content-Type', 'text/plain').send('Welcome to the Binance UDF Adapter for TradingView. See ./README.md for more details.')
 })
 
 /**
