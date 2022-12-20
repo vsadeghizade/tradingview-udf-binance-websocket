@@ -35,6 +35,14 @@ You should set your Redis configration in (/config/config.json)
 npm start
 
 ```
+
+## Docker
+```sh
+docker build . -t <your username>/tradingview-udf-binance
+docker run -p 3000:3000 -d <your username>/tradingview-udf-binance
+
+```
+
 Default port is 3000.
 
 ## Test
